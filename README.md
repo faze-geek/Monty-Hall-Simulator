@@ -108,7 +108,7 @@ Scenario 2: 11112187/100000000 = 11.1122% wins if player switches the initial ch
 ```
 
 - ### scenario_statistics_randomised()
-This is another routine for simulating the Monty Hall problem. It performs each simulation in **O(N*k)** time. In this routine, we carry out each step of the Monty Hall problem in memory spaces like arrays. Each choice in this algorithm is made randomly as well. But since random shuffling of arrays is performed, this is slower. You can read about this approach in more detail through the code comments.\
+This is another routine for simulating the Monty Hall problem. It performs each simulation in **O(N)** time. In this routine, we carry out each step of the Monty Hall problem in memory spaces like arrays. Each choice in this algorithm is made randomly as well. But since random shuffling of arrays is performed, this is slower. You can read about this approach in more detail through the code comments.\
 **This routine shows how to physically pick and manipulate the doors through arrays. Use this routine for better user visualization.**
 
 ## Output
