@@ -89,11 +89,11 @@ I preferred this library over conventional command line arguments using **argv**
 ## Implementation
 
 I have implemented 2 algorithms for better visualization by the user. \
-The eaxct logic of each implementation is documented through comments at the beginning.
-They are **scenario_statistics_randomised()** (default) and **scenario_statistics_sequential()** (commented). You may use any of the two, kindly uncomment lines 99-100 accordingly.
+The exact logic of each implementation is documented through comments before the function.
+They are **scenario_statistics_randomised()** (default) and **scenario_statistics_sequential()** (commented). You may use any of the two, kindly uncomment lines 101-102 accordingly.
 
 ### scenario_statistics_randomised()
-This is the most optimum routine for simulating the Monty Hall problem and can perform each simulation in about constant time **~O(1)**. This algorithm only uses random number generation and does not physically alter any memory like arrays (no operations like random shuffling / random sampling are performed). Each choice in this algorithm is done randomly. You can read about this approach in more detail in the comments.\
+This is the most optimum routine for simulating the Monty Hall problem and can perform each simulation in about constant time **~O(1)**. This algorithm only uses random number generation and does not physically alter any memory like arrays (no operations like random shuffling / random sampling are performed). Each choice in this algorithm is made randomly. You can read about this approach in more detail in the comments.\
 **The optimization allows us to achieve 1000 million simulations, which is not possible by a linear algorithm. Use this routine to run large inputs.**
 ```
 PS C:\Users\kunni\OneDrive\Desktop\Anurag_Bhat_Task\C++ Implementation> ./MontyHall  --num_doors 5 --num_doors_opened_by_host 3 --num_simulations 100000000
@@ -105,5 +105,3 @@ Scenario 2: 80001599/100000000 = 80.0016% wins if player switches the initial ch
 ### scenario_statistics_sequential()
 This is another routine for simulating the Monty Hall problem. It performs each simulation in **O(N)** time. In this routine we carry out the Monty Hall problem steps in memory spaces. We use the assumptions that the player always picks door 1 and the opening of doors by the host happens in a sequential manner.\
 **This routine shows how to physically manipulate the arrays as set of doors. Use this routine for better user visualization.** 
-
-
