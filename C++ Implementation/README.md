@@ -92,7 +92,7 @@ I have implemented 2 algorithms for better visualization by the user. \
 The exact logic of each implementation is documented through comments before the function.
 They are **scenario_statistics_randomised()** (default) and **scenario_statistics_sequential()** (commented). You may use any of the two, kindly uncomment lines 101-102 accordingly.
 
-### scenario_statistics_randomised()
+- ### scenario_statistics_randomised()
 This is the most optimum routine for simulating the Monty Hall problem and can perform each simulation in about constant time **~O(1)**. This algorithm only uses random number generation and does not physically alter any memory like arrays (no operations like random shuffling / random sampling are performed). Each choice in this algorithm is made randomly. You can read about this approach in more detail in the comments.\
 **The optimization allows us to achieve 1000 million simulations, which is not possible by a linear algorithm. Use this routine to run large inputs.**
 ```
@@ -102,6 +102,6 @@ Scenario 1: 19998401/100000000 = 19.9984% wins if player sticks to the initial c
 Scenario 2: 80001599/100000000 = 80.0016% wins if player switches the initial choice.
 ```
 
-### scenario_statistics_sequential()
+- ### scenario_statistics_sequential()
 This is another routine for simulating the Monty Hall problem. It performs each simulation in **O(N)** time. In this routine we carry out the Monty Hall problem steps in memory spaces. We use the assumptions that the player always picks door 1 and the opening of doors by the host happens in a sequential manner.\
 **This routine shows how to physically manipulate the arrays as set of doors. Use this routine for better user visualization.** 
