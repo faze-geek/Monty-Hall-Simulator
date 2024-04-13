@@ -75,7 +75,7 @@ I preferred this library over conventional command line arguments using **argv**
    Scenario 1: 1989/10000 = 19.89% wins if player sticks to the initial choice.
    Scenario 2: 8011/10000 = 80.11% wins if player switches the initial choice.
    ```
-3. It provides a user friendly help flag to understand how the code is related to the arguments.
+3. It provides a user friendly help flag to showcase how the code is related to the arguments.
 
     ```
     PS C:\Users\kunni\OneDrive\Desktop\Anurag_Bhat_Task\C++ Implementation> ./MontyHall  --help
