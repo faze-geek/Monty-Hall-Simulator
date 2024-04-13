@@ -91,8 +91,10 @@ I preferred this library over conventional command line arguments using **argv**
 
 ## Implementation
 
-I have implemented 2 algorithms for better visualization by the user. \
+I have implemented 2 algorithms for better visualization by the user. The detailed explanation is below :-\
 The exact logic of each implementation is documented through comments before the function.
+
+
 They are **scenario_statistics_optimal()** (default) and **scenario_statistics_randomised()** (commented). You may use any of the two, kindly uncomment lines 108-109 accordingly.
 
 - ### scenario_statistics_optimal()
