@@ -14,53 +14,60 @@ using namespace std;
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 
 /* Function to run a single simulation of the Monty Hall Problem.
-
-    Logic and Assumptions :
-    Placement of car is randomised. 
-    Choice of player is randomised.
+    Return Type:
+    - It returns a pair of boolean value: `<stay_success, switch_success>`
+    - `stay_success` = 1, if the player won the car by staying on its initial choice, 0 otherwise.
+    - `switch_sucess` = 1, if the player won the car by swithing its initial choice after k goat-doors were revealed, 0 otherwise.
     
-    Now there are 2 scenarios for success - 
-    1. If the player's initial choice was the car, then he will win if he does not swtich.
-    2. If the player's initial choice was not the car, then he will win if randomly chooses the index of (n-k-2).
+    Assumptions:
+    - The doors are indexed from 1 to n.
+    - Placement of car is randomised. 
+    - Choice of player is randomised.
 
-    To visualize the condition for 2nd scenario's success, go through these steps.
-    Step 1: 2 indices of the car and the player's choice get randomly selected.
-    Step 2: Host opens k wrong doors other than player's choice.
-    Let us remove the car, the player's choice and other k wrong doors from the original array. This leaves n-k-2 choices.
-    Now virtually assign indices from 0 to (n-k-3) as goats and (n-k-2)th index as car.
-    Then P(getting a car from the remaining doors) = P(getting index n-k-2 when randomly chosen from [0,n-k-2]) where P() is probability. 
+    Methodology:
+    - Firstly, we generate two uniformly at random indices `car_idx` and `player_idx` denoting the car door and player's initial choice.
+    - `stay_success` = 1 if and only if `car_idx == player_idx`.
+    - After `k` doors are revealed, there are exactly `R = n-k-1` doors left that the player can switch to (excluding `k` revealed doors and player's current choice door).
+    - By symmetry, the probability of car being in any of these `R` doors is equal.
+    - Thus, probability of landing on the car door after switching =  probability of getting `1` when a fair `R`-sided dice is rolled = 1/R.
 
     Time Complexity per simulation:
-    O(3*k), where k is a constant. We are generating 3 random numbers.
-    O(k) could be 32 roughly. As 32 bits are getting generated for integers.
+    - O(3*K), where K is a constant. We are generating 3 random numbers.
+    - O(K) could be 32 roughly. As 32 bits are getting generated for integers.
 */
 pair<bool, bool> scenario_statistics_optimal(int n,int k){
-    int car_idx = mtrand(0, n-1);                     // The car index.
-    int player_idx = mtrand(0, n-1);                  // The player's choice.
-
-    int random_choice = mtrand(0, n-k-2);             // The new choice, in case he decides to switch to any remaining door.
+    int car_idx = mtrand(1, n);                     // The car index.
+    int player_idx = mtrand(1, n);                  // The player's choice.
+    int remaining = n - k - 1;                      
+    int dice_roll = mtrand(1, remaining);           // The new random choice, in case he decides to switch to any remaining door.
     
     // Case 1. He wins if he stays.
     bool stay_success = car_idx == player_idx;
     // Case 2. He wins if he switches.       
-    bool switch_success = car_idx != player_idx && random_choice == (n-k-2);
+    bool switch_success = car_idx != player_idx && dice_roll == 1;
 
     return pair<bool, bool>{stay_success, switch_success};
 }
 
 /*  Function to run a single simulation of the Monty Hall Problem.
-     
-    Logic and Assumptions :
-    Placement of car is randomised. 
-    Choice of Player is randomised.
+    Return Type:
+    - It returns a pair of boolean value: `<stay_success, switch_success>`
+    - `stay_success` = 1, if the player won the car by staying on its initial choice, 0 otherwise.
+    - `switch_sucess` = 1, if the player won the car by swithing its initial choice after k goat-doors were revealed, 0 otherwise.
+
+    Assumptions:
+    - Placement of car is randomised. 
+    - Choice of Player is randomised.
     
-    Then k wrong doors are removed randomly. Now there are 2 scenarios - 
-    1. If the car is actually behind player's choice, he will win if he does not switch.
-    2. The car is not behind player's choice, then it is a part of the remaining (n-k-1) choices.
-    Those (n-k-1) choices are filled in a new array.
-    Now he will win, if the randomly chosen door in new array has a car behind it.
+    Methodology:
+    - Firstly, we generate two uniformly at random indices `car_idx` and `player_idx` denoting the car door and player's initial choice.
+    - `stay_success` = 1 if and only if `car_idx == player_idx`.
+    - To reveal `k` doors, all wrong doors in the `temp_doors` vector are randomly shuffled. The first `k` values are the indices of the doors opened.
+    - If the player wants to switch, he makes a choice from `alive_doors` which consists of `n-k-2` unrevealed doors and the car `car_idx` as well.
+    - `switch_success` = 1 if and only if the randomly chosen door in `alive_doors` has a car behind it.
  
-    Time Complexity per simulation: O(N)
+    Time Complexity per simulation: 
+    - O(N*K) where K is a constant.
 */
 
 pair<bool, bool> scenario_statistics_randomised(int n, int k) {
