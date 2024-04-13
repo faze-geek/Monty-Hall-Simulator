@@ -95,7 +95,7 @@ I have implemented 2 algorithms for better visualization by the user. The detail
 The exact logic of each implementation is documented through comments before the function.
 
 
-They are **scenario_statistics_optimal()** (default) and **scenario_statistics_randomised()** (commented). You may use any of the two, kindly uncomment lines 108-109 accordingly.
+They are **scenario_statistics_optimal()** (default) and **scenario_statistics_randomised()** (commented). You may use any of the two, kindly uncomment lines 114-116 accordingly.
 
 - ### scenario_statistics_optimal()
 This is the most optimum routine for simulating the Monty Hall problem and can perform each simulation in about constant time **~O(1)**. This algorithm only uses random number generation and does not physically alter any memory space like arrays (no operations like random shuffling, random sampling are performed). Each choice in this algorithm is made randomly. You can read about this approach in more detail through the code comments.\
