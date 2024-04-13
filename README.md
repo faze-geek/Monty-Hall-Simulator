@@ -98,7 +98,7 @@ The exact logic of each implementation is documented through comments before the
 They are **scenario_statistics_optimal()** (default) and **scenario_statistics_randomised()** (commented). You may use any of the two, kindly uncomment lines 114-116 accordingly.
 
 - ### scenario_statistics_optimal()
-This is the most optimum routine for simulating the Monty Hall problem and can perform each simulation in about constant time **~O(1)**. The implementation follows the principle of symmetry. This algorithm only uses random number generation and does not physically alter any memory space like arrays (no operations like random shuffling, random sampling are performed). Each choice in this algorithm is made randomly. You can read about this approach in more detail through the code comments.\
+This is the most optimum routine for simulating the Monty Hall problem and can perform each simulation in about constant time **~O(1)**. The implementation follows the principle of symmetry. This algorithm only uses random number generation and does not physically alter any memory space like arrays (no operations like random shuffling, random sampling are performed). Each choice in this algorithm is made randomly. You can read about this approach in more detail through the code [comments](https://github.com/faze-geek/Monty-Hall-Simulator/blob/885376f1c8ac5a46a11df19f637ffa0ac432035c/C%2B%2B%20Implementation/MontyHall.cpp#L16-L37).\
 **The optimization allows us to achieve 1000 million simulations alongside large input values of num_doors and num_doors_opened_by_host simultaneously, which is not possible by a linear algorithm. Use this routine to run large inputs.**
 ```
 PS C:\Users\kunni\OneDrive\Desktop\Anurag_Bhat_Task\C++ Implementation> ./MontyHall  --num_doors 100000 --num_doors_opened_by_host 99990 --num_simulations 100000000
@@ -108,7 +108,7 @@ Scenario 2: 11112187/100000000 = 11.1122% wins if player switches the initial ch
 ```
 
 - ### scenario_statistics_randomised()
-This is another routine for simulating the Monty Hall problem. It performs each simulation in **O(N)** time. In this routine, we carry out each step of the Monty Hall problem in memory spaces like arrays. Each choice in this algorithm is made randomly as well. But since random shuffling of arrays is performed, this is slower. You can read about this approach in more detail through the code comments.\
+This is another routine for simulating the Monty Hall problem. It performs each simulation in **O(N)** time. In this routine, we carry out each step of the Monty Hall problem in memory spaces like arrays. Each choice in this algorithm is made randomly as well. But since random shuffling of arrays is performed, this is slower. You can read about this approach in more detail through the code [comments](https://github.com/faze-geek/Monty-Hall-Simulator/blob/885376f1c8ac5a46a11df19f637ffa0ac432035c/C%2B%2B%20Implementation/MontyHall.cpp#L52-L71).\
 **This routine shows how to physically pick and manipulate the doors through arrays. Use this routine for better user visualization.**
 
 ## Output
