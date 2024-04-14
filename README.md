@@ -119,4 +119,4 @@ This simulator returns the winning percentages of the following cases -
 
 ## Explanation (Bonus)
 
-Kindly refer to [Explanation.pdf](https://github.com/faze-geek/Monty-Hall-Simulator/blob/main/Explanation.pdf) to understand the mathematical derivation behind Monty Hall Problem simulator.
+Kindly refer to [Explanation_MontyHall.pdf](https://github.com/faze-geek/Monty-Hall-Simulator/blob/main/Explanation_MontyHall.pdf) to understand the mathematical derivation behind Monty Hall Problem simulator.
