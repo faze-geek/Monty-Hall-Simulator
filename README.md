@@ -28,7 +28,7 @@ The task is to develop a C++ program that simulates the Monty Hall Problem, allo
     ```bash
     cd '.\C++ Implementation\'   
     ```
-    Mac OS (equivalent):
+    Mac OS (equivalent) :
     ```bash
     cd C++\ Implementation   
     ```
