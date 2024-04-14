@@ -24,13 +24,8 @@ The task is to develop a C++ program that simulates the Monty Hall Problem, allo
 
 3. Navigate to the particular folder:
    
-   Windows :
     ```bash
-    cd '.\C++ Implementation\'   
-    ```
-    Mac OS (equivalent) :
-    ```bash
-    cd C++\ Implementation   
+    cd "C++ Implementation"   
     ```
     
 5. Compile the program using a C++ compiler. For example, using g++:
