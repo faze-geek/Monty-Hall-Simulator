@@ -23,26 +23,31 @@ The task is to develop a C++ program that simulates the Monty Hall Problem, allo
     ```
 
 3. Navigate to the particular folder:
-
+   
+   Windows :
     ```bash
     cd '.\C++ Implementation\'   
     ```
-
-4. Compile the program using a C++ compiler. For example, using g++:
+    Mac OS (equivalent):
+    ```bash
+    cd C++\ Implementation   
+    ```
+    
+5. Compile the program using a C++ compiler. For example, using g++:
 
     ```bash
     g++ MontyHall.cpp -o MontyHall -I"C++ Implementation/Include"
     ```
     Kindly keep the same path provided in this command, so that the required header files can be compiled. 
     
-5. Run the program with the desired command-line arguments:
+6. Run the program with the desired command-line arguments:
 
     ```bash
     ./MontyHall  --num_doors <num_doors> --num_doors_opened_by_host <num_doors_opened_by_host> --num_simulations <num_simulations>
     ```
 
     Replace `<num_doors>`, `<num_doors_opened_by_host>`, and `<num_simulations>` with your input values.
-6. Example:
+7. Example:
    
    ```
    PS C:\Users\kunni\OneDrive\Desktop\Anurag_Bhat_Task\C++ Implementation> ./MontyHall  --num_doors 5 --num_doors_opened_by_host 3 --num_simulations 10000
