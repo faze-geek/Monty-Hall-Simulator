@@ -36,7 +36,7 @@ The task is to develop a C++ program that simulates the Monty Hall Problem, allo
 5. Compile the program using a C++ compiler. For example, using g++:
 
     ```bash
-    g++ MontyHall.cpp -o MontyHall -I"C++ Implementation/Include"
+    g++ -std=c++11 MontyHall.cpp -o MontyHall -I"C++ Implementation/Include"
     ```
     Kindly keep the same path provided in this command, so that the required header files can be compiled. 
     
