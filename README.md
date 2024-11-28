@@ -1,6 +1,6 @@
 # Monty Hall Problem Simulator
 
-The task is to develop a C++ program that simulates the Monty Hall Problem, allowing for the simulation of scenarios with a variable number of doors and different strategies for opening doors by the host.
+A C++ program that simulates the Monty Hall Problem, allowing for the simulation of scenarios with a variable number of doors and different strategies for opening doors by the host.
 
 ## Prerequisites
 - C++ compiler (supporting C++11 or newer)
@@ -117,6 +117,6 @@ This simulator returns the winning percentages of the following cases -
 1. The player stays with his initial pick.
 2. The player switches his initial pick to a new pick.
 
-## Explanation (Bonus)
+## Explanation
 
 Kindly refer to [Explanation_MontyHall.pdf](https://github.com/faze-geek/Monty-Hall-Simulator/blob/main/Explanation_MontyHall.pdf) to understand the mathematical derivation behind Monty Hall Problem simulator.
